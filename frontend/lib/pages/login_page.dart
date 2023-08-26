@@ -20,7 +20,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.lightBlueAccent,
       body: SafeArea(
         child: Center( 
           child: Column(
@@ -34,7 +34,7 @@ class LoginPage extends StatelessWidget {
                   'Borrow',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: Colors.white,
                     fontSize: 50,
                   ),
                 ),
@@ -45,16 +45,17 @@ class LoginPage extends StatelessWidget {
               // logo
               const Icon(
                 Icons.lock,
+                color: Colors.white,
                 size: 90,
               ),
               
               const SizedBox(height: 30),
 
               // login
-              Text(
+              const Text(
                 'Login',
                 style: TextStyle(
-                  color: Colors.grey[700],
+                  color: Colors.white,
                   fontSize: 30,
                   ),  
               ),
@@ -80,23 +81,23 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 10),
 
               // remember me/forgot password?
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 25.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
                       children: [
-                        const RememberMe(),
+                        RememberMe(),
                         Text(
                           'Remember Me',
-                          style: TextStyle(color: Colors.grey[600]),
+                          style: TextStyle(color: Colors.white),
                         ),
                       ],
                     ),
                     Text(
                       'Forgot Your Password?',
-                      style: TextStyle(color: Colors.grey[600]),
+                      style: TextStyle(color: Colors.white),
                     ),
                   ],
                 )
@@ -122,11 +123,11 @@ class LoginPage extends StatelessWidget {
                         color: Colors.grey[400],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.0),
                       child: Text(
                         'Or continue with',
-                        style: TextStyle(color: Colors.grey[700]),
+                        style: TextStyle(color: Colors.white),
                         ),
                     ),
                     Expanded(
@@ -148,7 +149,7 @@ class LoginPage extends StatelessWidget {
                   // google button
                   SquareTile(imagePath: 'lib/images/google.png'),
 
-                  SizedBox(height: 10),
+                  SizedBox(height: 15),
 
                   // apple button
                   SquareTile(imagePath: 'lib/images/apple.png'),
@@ -166,14 +167,14 @@ class LoginPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Not a member?', 
-                  style: TextStyle(color: Colors.grey[700])
+                  const Text('Not a member?', 
+                  style: TextStyle(color: Colors.white)
                   ),
                   const SizedBox(width: 4),
-                  const Text(
+                  Text(
                     'Register now',
                     style: TextStyle(
-                      color: Colors.blue, 
+                      color: Colors.blue.shade600, 
                       fontWeight: FontWeight.bold,
                     ),
                   )
