@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:frontend/components/my_grid_tile.dart';
 
 class ExplorePage extends StatefulWidget {
   const ExplorePage({super.key, required this.title});
@@ -10,17 +13,21 @@ class ExplorePage extends StatefulWidget {
 }
 
 class _ExplorePageState extends State<ExplorePage> {
+  final List<String> images = [
+    'lib/images/facebook.png'
+  ];
+        
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.cyanAccent),
-        backgroundColor: Colors.cyan,
+        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: Colors.lightBlueAccent,
         title: Text(
           widget.title,
           style: const TextStyle(
             fontSize: 40,
-            color: Colors.cyanAccent
+            color: Colors.white
           ),  
         ),
         actions: [
@@ -57,7 +64,7 @@ class _ExplorePageState extends State<ExplorePage> {
             children: [
               const UserAccountsDrawerHeader(
                 decoration: BoxDecoration(
-                  color: Colors.cyan
+                  color: Colors.lightBlueAccent
                 ),
                 accountName: Text('Username'), 
                 accountEmail: Text('user@gmail.com'),
@@ -82,9 +89,39 @@ class _ExplorePageState extends State<ExplorePage> {
                 leading: const Icon(Icons.settings),
                 title: const Text('Settings'),
                 onTap: () {},
+              ),
+
+              ListTile(
+                leading: const Icon(Icons.logout),
+                title: const Text('Sign out'),
+                onTap: () {},
               )
             ],
           ),
+        ),
+      ),
+      body: Container(
+        color: Colors.white,
+        padding: const EdgeInsets.all(12.0),
+        child: GridView.count(
+          crossAxisCount: 3,
+          childAspectRatio: 0.6,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 5,
+          children: const [
+            MyGridTile(imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/chainsaw_man.jpeg'),
+            MyGridTile(imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/jujutsu_kaisen.jpeg'),
+            MyGridTile(imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/dragonball_super.jpeg'),
+            MyGridTile(imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/bleach.jpeg'),
+            MyGridTile(imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/one_piece.jpeg'),
+            MyGridTile(imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/naruto.jpeg'),
+            MyGridTile(imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/attack_on_titan.jpeg'),
+            MyGridTile(imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/mob_psycho_100.jpeg'),
+            MyGridTile(imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/one_punch_man.jpeg'),
+            MyGridTile(imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/spy_family.jpeg'),
+            MyGridTile(imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/fullmetal_alchemist.jpeg'),
+            MyGridTile(imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/death_note.jpeg'),
+          ],
         ),
       )
     );
