@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/components/extensions/string_extension.dart';
+import 'package:frontend/extensions/string_extension.dart';
+import 'package:frontend/pages/explore_page.dart';
 
 class MyGridTile extends StatelessWidget {
-  const MyGridTile({super.key, required this.imagePath});
+  const MyGridTile({super.key, required this.book});
 
-  final String imagePath;
+  final Book book;
 
   @override
   Widget build(BuildContext context) {
@@ -12,17 +13,14 @@ class MyGridTile extends StatelessWidget {
       children: [
         GridTile(
           child: Image.asset(
-            imagePath,
+            book.imagePath,
             height: 180,
             width: 130,
           ),
         ),
         Center(
           child: Text(
-            imagePath.split('/').last
-                     .split('.')[0]
-                     .replaceAll('_', ' ')
-                     .capitalizeByWord(),
+            book.title,
             textAlign: TextAlign.center,
             style: const TextStyle(color: Colors.black),
           )

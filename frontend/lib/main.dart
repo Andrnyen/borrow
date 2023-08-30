@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: appTitle,
       debugShowCheckedModeBanner: false,
-      home: ExplorePage(title: appTitle,),
+      home: ExplorePage(),
     );
   }
 }
