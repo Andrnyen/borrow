@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.mongodb:bson:4.9.1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../../mnt/c/Users/brian/.m2/repository/org/mongodb/bson/4.9.1/bson-4.9.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../.m2/repository/org/mongodb/bson/4.9.1/bson-4.9.1.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$PROJECT_DIR$/../../../../../mnt/c/Users/brian/.m2/repository/org/mongodb/bson/4.9.1/bson-4.9.1-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../.m2/repository/org/mongodb/bson/4.9.1/bson-4.9.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../../../../mnt/c/Users/brian/.m2/repository/org/mongodb/bson/4.9.1/bson-4.9.1-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../.m2/repository/org/mongodb/bson/4.9.1/bson-4.9.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
