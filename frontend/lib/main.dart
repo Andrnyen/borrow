@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/components/book_info_page.dart';
 import 'package:frontend/pages/explore_page.dart';
 import 'pages/login_page.dart';
 
@@ -13,10 +14,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: appTitle,
       debugShowCheckedModeBanner: false,
-      home: ExplorePage(),
+      home: BookInfoPage(book: Book(
+        id: '1',
+        title: 'Jujutsu Kaisen',
+        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/jujutsu_kaisen.jpeg',
+      ),),
     );
   }
 }
