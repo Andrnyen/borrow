@@ -12,9 +12,9 @@ class SquareTile extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.white),
+        border: Border.all(color: Colors.lightBlueAccent),
         borderRadius: BorderRadius.circular(16),
-        color: Colors.grey[200],
+        color: Colors.white,
       ),
       child: Image.asset(
         imagePath,
