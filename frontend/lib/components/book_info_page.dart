@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/components/my_button.dart';
 import 'package:frontend/pages/explore_page.dart';
 
 class BookInfoPage extends StatelessWidget {
@@ -9,16 +10,33 @@ class BookInfoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          book.title,
+          style: const TextStyle(color: Colors.black),
+        ),
+        backgroundColor: Colors.white,
+        leading: BackButton(
+          onPressed: () {},
+          color: Colors.black,
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: GestureDetector(
+              onTap: () {},
+              child: const Icon(
+                Icons.add,
+                color: Colors.black,
+              ),
+            ),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: Column(
           children: [
-            const Align(
-              alignment: Alignment(-0.9, 0),
-              child: BackButton(
-                color: Colors.black,
-              )
-            ),
-
+            const SizedBox(height: 15,),
             // book cover
             Center(
               child: Image.asset(
@@ -28,28 +46,31 @@ class BookInfoPage extends StatelessWidget {
               )
             ),
 
-            const SizedBox(
-              height: 5
+            const SizedBox(height: 10,),
+
+            Expanded(
+              child: SingleChildScrollView(
+                  physics: const ClampingScrollPhysics(), 
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        height: MediaQuery.of(context).size.height * .50,
+                        padding: const EdgeInsets.all(10.0),
+                        color: Colors.white,
+                        child: Text(book.description),
+                      )
+                    ],
+                  ),
+                ),
             ),
 
-            // title
-            Text(
-              book.title,
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 30
-              ),
-            ),
+            const SizedBox(height: 10,),
 
-            const SizedBox(height: 10),
-
-            // description
-            const Text(
-              'Description: Idly indulging in baseless paranormal activities with the Occult Club, high schooler Yuuji Itadori spends his days at either the clubroom or the hospital, where he visits his bedridden grandfather. However, this leisurely lifestyle soon takes a turn for the strange when he unknowingly encounters a cursed item. Triggering a chain of supernatural occurrences, Yuuji finds himself suddenly thrust into the world of Curses—dreadful beings formed from human malice and negativity—after swallowing the said item, revealed to be a finger belonging to the demon Sukuna Ryoumen, the "King of Curses.\n\nYuuji experiences first-hand the threat these Curses pose to society as he discovers his own newfound powers. Introduced to the Tokyo Metropolitan Jujutsu Technical High School, he begins to walk down a path from which he cannot return—the path of a Jujutsu sorcerer.',
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.black,
-              ),
+            const ExpansionTile(
+              title: Text('Chapters'),
+              children: [
+                
+              ],
             ),
           ],
         ),
