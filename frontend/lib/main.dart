@@ -9,9 +9,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  static const appTitle = 'Borrow';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: appTitle,
       debugShowCheckedModeBanner: false,
       home: RegistrationPage(),
     );
