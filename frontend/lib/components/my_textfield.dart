@@ -22,13 +22,13 @@ class MyTextField extends StatelessWidget {
         decoration: InputDecoration(
           enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.white
+              color: Colors.blue
             )
           ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey.shade400),
+          focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.black),
           ),
-          fillColor: Colors.grey.shade200,
+          fillColor: Colors.blue.shade50,
           filled: true,
           hintText: hintText,
           hintStyle: TextStyle(color: Colors.grey[500])
