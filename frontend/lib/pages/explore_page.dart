@@ -5,8 +5,14 @@ class Book {
   String id;
   String title;
   String imagePath;
+  String description;
 
-  Book({required this.id, required this.title, required this.imagePath});
+  Book({
+    required this.id, 
+    required this.title, 
+    required this.imagePath,
+    required this.description,  
+  });
 }
 
 class ExplorePage extends StatefulWidget {
@@ -64,84 +70,96 @@ class _ExplorePageState extends State<ExplorePage> {
       Book(
         id: '1', 
         title: 'Chainsaw Man', 
-        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/chainsaw_man.jpeg'
+        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/chainsaw_man.jpeg',
+        description: ''
       ),
     );
     _list.add(
       Book(
         id: '2', 
         title: "Jujutsu Kaisen",
-        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/jujutsu_kaisen.jpeg'
+        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/jujutsu_kaisen.jpeg',
+        description: ''
       ),
     );
     _list.add(
       Book(
         id: '3',
         title: 'Dragonball Super', 
-        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/dragonball_super.jpeg'
+        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/dragonball_super.jpeg',
+        description: ''
       ),
     );
     _list.add(
       Book(
         id: '4',
         title: 'Bleach', 
-        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/bleach.jpeg'
+        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/bleach.jpeg',
+        description: ''
       ),
     );
     _list.add(
       Book(
         id: '5',
         title: 'One Piece', 
-        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/one_piece.jpeg'
+        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/one_piece.jpeg',
+        description: ''
       ),
     );
     _list.add(
       Book(
         id: '6',
         title: 'Naruto', 
-        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/naruto.jpeg'
+        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/naruto.jpeg',
+        description: ''
       ),
     );
     _list.add(
       Book(
         id: '7',
         title: 'Attack On Titan', 
-        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/attack_on_titan.jpeg'
+        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/attack_on_titan.jpeg',
+        description: ''
       ),
     );
     _list.add(
       Book(
         id: '8',
         title: 'Mob Psycho 100', 
-        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/mob_psycho_100.jpeg'
+        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/mob_psycho_100.jpeg',
+        description: ''
       ),
     );
     _list.add(
       Book(
         id: '9',
         title: 'One Punch Man', 
-        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/one_punch_man.jpeg'
+        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/one_punch_man.jpeg',
+        description: ''
       ),
     );
     _list.add(
       Book(
         id: '10',
         title: 'Spy Family', 
-        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/spy_family.jpeg'
+        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/spy_family.jpeg',
+        description: ''
       ),
     );
     _list.add(
       Book(
         id: '11',
         title: 'Fullmetal Alchemist', 
-        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/fullmetal_alchemist.jpeg'
+        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/fullmetal_alchemist.jpeg',
+        description: ''
       ),
     );
     _list.add(
       Book(
         id: '12',
         title: 'Death Note', 
-        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/death_note.jpeg'
+        imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/death_note.jpeg',
+        description: ''
       ),
     );
     _searchList = _list;
