@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/components/book_info_page.dart';
 import 'package:frontend/components/my_grid_tile.dart';
 
 class Book {
@@ -11,7 +12,7 @@ class Book {
     required this.id, 
     required this.title, 
     required this.imagePath,
-    required this.description,  
+    required this.description,
   });
 }
 
@@ -71,7 +72,7 @@ class _ExplorePageState extends State<ExplorePage> {
         id: '1', 
         title: 'Chainsaw Man', 
         imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/chainsaw_man.jpeg',
-        description: ''
+        description: "Denji is robbed of a normal teenage life, left with nothing but his deadbeat father's overwhelming debt. His only companion is his pet, the chainsaw devil Pochita, with whom he slays devils for money that inevitably ends up in the yakuza's pockets. All Denji can do is dream of a good, simple life: one with delicious food and a beautiful girlfriend by his side. But an act of greedy betrayal by the yakuza leads to Denji's brutal, untimely death, crushing all hope of him ever achieving happiness.\n\nRemarkably, an old contract allows Pochita to merge with the deceased Denji and bestow devil powers on him, changing him into a hybrid able to transform his body parts into chainsaws. Because Denji's new abilities pose a significant risk to society, the Public Safety Bureau's elite devil hunter Makima takes him in, letting him live as long as he obeys her command. Guided by the promise of a content life alongside an attractive woman, Denji devotes everything and fights with all his might to make his naive dreams a reality."
       ),
     );
     _list.add(
@@ -79,7 +80,7 @@ class _ExplorePageState extends State<ExplorePage> {
         id: '2', 
         title: "Jujutsu Kaisen",
         imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/jujutsu_kaisen.jpeg',
-        description: ''
+        description: 'Idly indulging in baseless paranormal activities with the Occult Club, high schooler Yuuji Itadori spends his days at either the clubroom or the hospital, where he visits his bedridden grandfather. However, this leisurely lifestyle soon takes a turn for the strange when he unknowingly encounters a cursed item. Triggering a chain of supernatural occurrences, Yuuji finds himself suddenly thrust into the world of Curses—dreadful beings formed from human malice and negativity—after swallowing the said item, revealed to be a finger belonging to the demon Sukuna Ryoumen, the "King of Curses.\n\nYuuji experiences first-hand the threat these Curses pose to society as he discovers his own newfound powers. Introduced to the Tokyo Metropolitan Jujutsu Technical High School, he begins to walk down a path from which he cannot return—the path of a Jujutsu sorcerer.',
       ),
     );
     _list.add(
@@ -87,7 +88,7 @@ class _ExplorePageState extends State<ExplorePage> {
         id: '3',
         title: 'Dragonball Super', 
         imagePath: '/Users/andrewnguyen/Development/borrow/frontend/lib/images/books/dragonball_super.jpeg',
-        description: ''
+        description: 'You\'ve already heard of this series'
       ),
     );
     _list.add(
@@ -218,7 +219,12 @@ class _ExplorePageState extends State<ExplorePage> {
         child: GridView.builder(
           itemCount: _searchList.length,
           itemBuilder: (context, index) {
-            return MyGridTile(book: _searchList[index]);
+            return GestureDetector( 
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => BookInfoPage(book: _searchList[index]),));
+              },
+              child: MyGridTile(book: _searchList[index])
+            );
           },
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
