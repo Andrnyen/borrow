@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/extensions/string_extension.dart';
-import 'package:frontend/pages/explore_page.dart';
+import 'package:frontend/book.dart';
 
 class MyGridTile extends StatelessWidget {
   const MyGridTile({super.key, required this.book});
@@ -12,8 +11,8 @@ class MyGridTile extends StatelessWidget {
     return Column(
       children: [
         GridTile(
-          child: Image.asset(
-            book.imagePath,
+          child: Image.network(
+            book.thumb,
             height: 180,
             width: 130,
           ),

@@ -1,5 +1,5 @@
 class ApiConstants {
-  static String baseUrl = 'https://mangaverse-api.p.rapidapi.com/manga';
+  static String baseUrl = 'mangaverse-api.p.rapidapi.com/manga';
 
   // endpoints
   static String fetchListOfManga = '/fetch';

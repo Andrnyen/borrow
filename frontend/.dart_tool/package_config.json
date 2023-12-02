@@ -69,9 +69,9 @@
     },
     {
       "name": "flutter_lints",
-      "rootUri": "file:///Users/andrewnguyen/.pub-cache/hosted/pub.dev/flutter_lints-2.0.3",
+      "rootUri": "file:///Users/andrewnguyen/.pub-cache/hosted/pub.dev/flutter_lints-3.0.1",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "flutter_test",
@@ -105,7 +105,7 @@
     },
     {
       "name": "lints",
-      "rootUri": "file:///Users/andrewnguyen/.pub-cache/hosted/pub.dev/lints-2.1.1",
+      "rootUri": "file:///Users/andrewnguyen/.pub-cache/hosted/pub.dev/lints-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -150,6 +150,12 @@
       "rootUri": "file:///Users/andrewnguyen/.pub-cache/hosted/pub.dev/source_span-1.10.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
+    },
+    {
+      "name": "sprintf",
+      "rootUri": "file:///Users/andrewnguyen/.pub-cache/hosted/pub.dev/sprintf-7.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "stack_trace",
@@ -206,7 +212,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-12-02T04:49:37.996999Z",
+  "generated": "2023-12-02T10:32:05.066771Z",
   "generator": "pub",
   "generatorVersion": "3.1.0"
 }

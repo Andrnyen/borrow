@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/components/book_info_page.dart';
 import 'package:frontend/pages/explore_page.dart';
-import 'pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());

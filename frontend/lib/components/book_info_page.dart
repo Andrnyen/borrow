@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/components/my_button.dart';
 import 'package:frontend/pages/explore_page.dart';
+import 'package:frontend/book.dart';
 
 class BookInfoPage extends StatelessWidget {
   const BookInfoPage({super.key, required this.book});
@@ -41,8 +41,8 @@ class BookInfoPage extends StatelessWidget {
             const SizedBox(height: 15,),
             // book cover
             Center(
-              child: Image.asset(
-                book.imagePath,
+              child: Image.network(
+                book.thumb,
                 width: 200,
                 height: 300,
               )
@@ -58,10 +58,10 @@ class BookInfoPage extends StatelessWidget {
                   constraints: const BoxConstraints(
                     minHeight: 0.0,
                     maxHeight: 250.0,),
-                  child: SingleChildScrollView(
+                  child: const SingleChildScrollView(
                     child: Text(
-                      book.description,
-                      style: const TextStyle(
+                      '',
+                      style: TextStyle(
                         color: Colors.black,
                         fontSize: 16.0
                       ),
