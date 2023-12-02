@@ -5,5 +5,6 @@ class ApiConstants {
   static String fetchListOfManga = '/fetch';
   static String fetchLastestManga = '/latest';
   static String searchManga = '/search';
-  static String getManga = '/manga';
+  static String fetchChapters = '/chapter';
+  static String fetchImages = '/image';
 }
