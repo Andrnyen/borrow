@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:frontend/book_chapter_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:frontend/book_model.dart';
 
@@ -8,7 +9,8 @@ class ApiService {
       'mangaverse-api.p.rapidapi.com',
       '/manga/fetch',
       {
-        'type': 'japan'
+        'type': 'japan',
+        'genres': 'Adventure'
       }
     );
 
@@ -30,7 +32,7 @@ class ApiService {
     return Book.booksFromSnapshot(temp);
   }
 
-  static Future<List<Book>> getChapters(String id) async {
+  static Future<List<BookChapter>> getChapters(String id) async {
     var url = Uri.https(
       'mangaverse-api.p.rapidapi.com',
       '/manga/chapter',
@@ -54,6 +56,6 @@ class ApiService {
       temp.add(i);
     }
 
-    return Book.booksFromSnapshot(temp);
+    return BookChapter.booksFromSnapshot(temp);
   }
 }
