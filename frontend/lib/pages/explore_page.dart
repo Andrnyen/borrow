@@ -58,7 +58,7 @@ class _ExplorePageState extends State<ExplorePage> {
               itemCount: mangaList.length,
               itemBuilder: (_, i) =>  GestureDetector(
                 onTap: () => {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => BookInfoPage(book: mangaList[i]),))
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => BookInfoPage(book: mangaList[i]),))
                 },
                 child: MyGridTile(book: mangaList[i]),
               )

@@ -10,17 +10,18 @@ class BookInfoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       appBar: AppBar(
         title: Text(
           book.title,
-          style: const TextStyle(color: Colors.black),
+          style: const TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
         leading: BackButton(
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => const ExplorePage(),));
           },
-          color: Colors.black,
+          color: Colors.white,
         ),
         actions: [
           Padding(
@@ -29,7 +30,7 @@ class BookInfoPage extends StatelessWidget {
               onTap: () {},
               child: const Icon(
                 Icons.add,
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
           ),
@@ -62,7 +63,7 @@ class BookInfoPage extends StatelessWidget {
                     child: Text(
                       book.summary,
                       style: const TextStyle(
-                        color: Colors.black,
+                        color: Colors.white,
                         fontSize: 16.0
                       ),
                       textAlign: TextAlign.left,
@@ -73,7 +74,17 @@ class BookInfoPage extends StatelessWidget {
             ),
             
             const ExpansionTile(
-              title: Text('Chapters'),
+              initiallyExpanded: true,
+              trailing: Icon(
+                Icons.keyboard_arrow_down,
+                color: Colors.white
+              ),
+              title: Text(
+                'Chapters',
+                style: TextStyle(
+                  color: Colors.white
+                ),
+              ),
               children: [
                 
               ],
