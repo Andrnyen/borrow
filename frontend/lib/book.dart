@@ -6,7 +6,7 @@ class Book {
   Book({
     required this.id, 
     required this.title, 
-    required this.thumb
+    required this.thumb,
   });
 
   factory Book.fromJson(dynamic json) => Book(
@@ -15,11 +15,12 @@ class Book {
     thumb: json['thumb'] as String,
   );
 
-  static List<Book> booksFromSnapshot(List snapshot) {
-    return snapshot.map((data) {
+  static List<Book> booksFromSnapshot(List snapshot) => 
+    snapshot.map((data) {
       return Book.fromJson(data);
-    }).toList();
-  }
+    }
+  ).toList();
+  
 
   @override
   String toString() {

@@ -6,7 +6,10 @@ class ApiService {
   static Future<List<Book>> getBooks() async {
     var url = Uri.https(
       'mangaverse-api.p.rapidapi.com',
-      '/manga/fetch'  
+      '/manga/fetch',
+      {
+        'type': 'japan'
+      }
     );
 
     final response = await http.get(
