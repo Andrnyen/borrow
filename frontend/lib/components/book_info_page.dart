@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/components/my_button.dart';
 import 'package:frontend/pages/explore_page.dart';
+import 'package:frontend/book.dart';
 
 class BookInfoPage extends StatelessWidget {
   const BookInfoPage({super.key, required this.book});
@@ -17,7 +17,9 @@ class BookInfoPage extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
         leading: BackButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const ExplorePage(),));
+          },
           color: Colors.black,
         ),
         actions: [
@@ -39,8 +41,8 @@ class BookInfoPage extends StatelessWidget {
             const SizedBox(height: 15,),
             // book cover
             Center(
-              child: Image.asset(
-                book.imagePath,
+              child: Image.network(
+                book.thumb,
                 width: 200,
                 height: 300,
               )
@@ -48,24 +50,28 @@ class BookInfoPage extends StatelessWidget {
 
             const SizedBox(height: 10,),
 
-            Expanded(
-              child: SingleChildScrollView(
-                  physics: const ClampingScrollPhysics(), 
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        height: MediaQuery.of(context).size.height * .50,
-                        padding: const EdgeInsets.all(10.0),
-                        color: Colors.white,
-                        child: Text(book.description),
-                      )
-                    ],
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Container(
+                  constraints: const BoxConstraints(
+                    minHeight: 0.0,
+                    maxHeight: 250.0,),
+                  child: const SingleChildScrollView(
+                    child: Text(
+                      '',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16.0
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
                   ),
                 ),
+              ),
             ),
-
-            const SizedBox(height: 10,),
-
+            
             const ExpansionTile(
               title: Text('Chapters'),
               children: [

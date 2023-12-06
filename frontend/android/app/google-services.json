@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "528917038886",
+    "project_id": "borrow-3ccfb",
+    "storage_bucket": "borrow-3ccfb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528917038886:android:62ff45518890ef019663e7",
+        "android_client_info": {
+          "package_name": "com.example.frontend"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlxABy3hRjk0qi4mdD9EfRb8GEdGz0eRM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
