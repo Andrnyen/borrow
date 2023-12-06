@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/pages/explore_page.dart';
-import 'package:frontend/book.dart';
+import 'package:frontend/book_model.dart';
 
 class BookInfoPage extends StatelessWidget {
   const BookInfoPage({super.key, required this.book});
@@ -58,10 +58,10 @@ class BookInfoPage extends StatelessWidget {
                   constraints: const BoxConstraints(
                     minHeight: 0.0,
                     maxHeight: 250.0,),
-                  child: const SingleChildScrollView(
+                  child: SingleChildScrollView(
                     child: Text(
-                      '',
-                      style: TextStyle(
+                      book.summary,
+                      style: const TextStyle(
                         color: Colors.black,
                         fontSize: 16.0
                       ),

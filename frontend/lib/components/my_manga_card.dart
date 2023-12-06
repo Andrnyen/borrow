@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/book.dart';
+import 'package:frontend/book_model.dart';
 
 class MyGridTile extends StatelessWidget {
   const MyGridTile({super.key, required this.book});

@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:frontend/book.dart';
+import 'package:frontend/book_model.dart';
 
 class ApiService {
   static Future<List<Book>> getBooks() async {

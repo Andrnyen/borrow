@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/api_service.dart';
 import 'package:frontend/components/my_bottom_nav_item.dart';
-import 'package:frontend/book.dart';
+import 'package:frontend/book_model.dart';
 import 'package:frontend/components/my_manga_card.dart';
 import 'package:frontend/components/book_info_page.dart';
 
