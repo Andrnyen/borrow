@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/book_model.dart';
+import 'package:frontend/models/book_model.dart';
 import 'package:frontend/components/subheadings.dart';
 
 class MyBookDesc extends StatefulWidget {

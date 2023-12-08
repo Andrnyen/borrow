@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/book_chapter_model.dart';
+import 'package:frontend/models/book_chapter_model.dart';
 import 'package:frontend/components/hor_divider.dart';
 import 'package:frontend/components/my_book_cover.dart';
 import 'package:frontend/components/my_book_desc.dart';
 import 'package:frontend/pages/explore_page.dart';
-import 'package:frontend/book_model.dart';
+import 'package:frontend/models/book_model.dart';
 import 'package:frontend/api_service.dart';
+import 'package:frontend/pages/reading_page.dart';
 
 class BookInfoPage extends StatefulWidget {
   const BookInfoPage({super.key, required this.book});
@@ -45,7 +46,7 @@ class _BookInfoPage extends State<BookInfoPage> {
           style: const TextStyle(color: Colors.white),
           overflow: TextOverflow.ellipsis,
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.grey[900],
         leading: BackButton(
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => const ExplorePage(),));
@@ -101,12 +102,20 @@ class _BookInfoPage extends State<BookInfoPage> {
                   ),
                   children: List.generate(
                     bookChapters.length, 
-                    (index) => ListTile(
-                      contentPadding: const EdgeInsets.only(left: 10), 
-                      title: Text(
-                        bookChapters[index].title,
-                        style: const TextStyle(color: Colors.white),
-                      ),
+                    (index) => GestureDetector(
+                      onTap: () => {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => 
+                            ReadingPage(chapterName: bookChapters[index].title, bookChapterId: bookChapters[index].id,)
+                          )
+                        )
+                      },
+                      child: ListTile(
+                        contentPadding: const EdgeInsets.only(left: 10), 
+                        title: Text(
+                          bookChapters[index].title,
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                      )
                     )
                   ),
                 )
