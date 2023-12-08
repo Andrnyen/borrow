@@ -20,7 +20,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.lightBlueAccent,
+      backgroundColor: Colors.grey[900],
       body: SafeArea(
         child: Center( 
           child: Column(
@@ -175,7 +175,7 @@ class LoginPage extends StatelessWidget {
                   Text(
                     'Register now',
                     style: TextStyle(
-                      color: Colors.blue.shade600, 
+                      color: Colors.orange.shade600, 
                       fontWeight: FontWeight.bold,
                     ),
                   )
