@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/api_service.dart';
 import 'package:frontend/components/my_bottom_nav_item.dart';
-import 'package:frontend/book.dart';
-import 'package:frontend/components/my_manga_card.dart';
-import 'package:frontend/components/book_info_page.dart';
+import 'package:frontend/book_model.dart';
+import 'package:frontend/components/my_grid_tile.dart';
+import 'package:frontend/pages/book_info_page.dart';
 
 class ExplorePage extends StatefulWidget {
   const ExplorePage({super.key});
@@ -50,24 +50,26 @@ class _ExplorePageState extends State<ExplorePage> {
           color: Colors.black,
           child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                mainAxisSpacing: 5.0,
-                crossAxisSpacing: 5.0,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10,
                 crossAxisCount: 3,
-                childAspectRatio: 1 / 2.25
+                childAspectRatio: 1 / 1.75
               ), 
               itemCount: mangaList.length,
               itemBuilder: (_, i) =>  GestureDetector(
                 onTap: () => {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => BookInfoPage(book: mangaList[i]),))
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => BookInfoPage(book: mangaList[i]),))
                 },
                 child: MyGridTile(book: mangaList[i]),
               )
             ),
         ) :
-        const Center(child: CircularProgressIndicator(
+        Container(
+          color: Colors.black,
+        child: const Center(child: CircularProgressIndicator(
           color: Colors.orange
           )
-        ),
+        )),
       bottomNavigationBar: BottomNavigationBar(
         onTap: navBarTap,
         currentIndex: selectedNavIndex,
