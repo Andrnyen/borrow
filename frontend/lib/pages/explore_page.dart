@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/api_service.dart';
 import 'package:frontend/components/my_bottom_nav_item.dart';
-import 'package:frontend/book_model.dart';
+import 'package:frontend/models/book_model.dart';
 import 'package:frontend/components/my_grid_tile.dart';
 import 'package:frontend/pages/book_info_page.dart';
 
