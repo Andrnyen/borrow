@@ -10,7 +10,6 @@ class ApiService {
       '/manga/fetch',
       {
         'type': 'japan',
-        'genres': 'Adventure'
       }
     );
 
