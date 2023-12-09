@@ -1,19 +1,39 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/components/my_button.dart';
 import 'package:frontend/components/my_textfield.dart';
 import 'package:frontend/components/remember_me.dart';
 import 'package:frontend/components/square_tile.dart';
+import 'package:frontend/pages/auth.dart';
+import 'package:frontend/pages/registration_page.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPage();
+}
+
+class _LoginPage extends State<LoginPage> {
+  String? errorMessage = '';
+  bool isLogin = true;
 
   // text editing controllers
-  final usernameController = TextEditingController();
+  final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
   // sign user in method
-  void signUserIn() {
-
+  Future<void> signInWithEmailAndPassword() async {
+    try {
+      await Auth().signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text
+      );
+    } on FirebaseAuthException catch(e) {
+      setState(() {
+        errorMessage = e.message;
+      });
+    }
   }
 
   @override
@@ -64,8 +84,8 @@ class LoginPage extends StatelessWidget {
 
               // username textfield
               MyTextField(
-                controller: usernameController,
-                hintText: 'Username',
+                controller: emailController,
+                hintText: 'Email',
                 obscureText: false,
               ),
               
@@ -107,7 +127,7 @@ class LoginPage extends StatelessWidget {
 
               // sign in button
               MyButton(
-                onTap: signUserIn,
+                onTap: signInWithEmailAndPassword,
                 message: 'Sign in',
               ),
 
@@ -172,12 +192,18 @@ class LoginPage extends StatelessWidget {
                   style: TextStyle(color: Colors.white)
                   ),
                   const SizedBox(width: 4),
-                  Text(
-                    'Register now',
-                    style: TextStyle(
-                      color: Colors.orange.shade600, 
-                      fontWeight: FontWeight.bold,
-                    ),
+
+                  GestureDetector(
+                    onTap: () => {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const RegistrationPage(),))
+                    },
+                    child: Text(
+                      'Register now',
+                      style: TextStyle(
+                        color: Colors.orange.shade600, 
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
                   )
                 ],
               ),
